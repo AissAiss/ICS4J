@@ -7,9 +7,10 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		File file = new File("ADECal.ics"); 
-		
 		ADECalendar cal = ICSparser.getADECalendar(file);
 		cal.printAllEvent();
+		
+		//Premier commit avec Eclipse
 
 	}
 
