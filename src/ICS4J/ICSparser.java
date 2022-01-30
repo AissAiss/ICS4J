@@ -101,6 +101,8 @@ public class ICSparser {
         	System.out.println("PB lecture du fichier");
         }
 		
+		cal.sort(); 
+		
 		return cal;
 	}
 }

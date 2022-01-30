@@ -9,11 +9,6 @@ public class Main {
 		File file = new File("ADECal.ics"); 
 		ADECalendar cal = ICSparser.getADECalendar(file);
 		cal.printAllEvent();
-		cal.sort();
-		
-		System.out.println("---------------------"); 
-		
-		cal.printAllEvent();
 	}
 
 }
