@@ -1,5 +1,5 @@
 package ICS4J;
-public class ADEEvent {
+public class ADEEvent implements Comparable<ADEEvent>{
 	//DTSTART     : 2021 09 16 T 11 15 00Z    Date de début + Heure de début
 	//DTEND       : 2021 09 16 T 12 45 00Z    Heure de fin.  
 	//SUMMARY     : HAI708I                   Code de l'UE
@@ -55,6 +55,12 @@ public class ADEEvent {
 				"\t" + SUMMARY 		+ "\n" + 
 				"\t" + LOCATION 	+ "\n" + 
 				"\t" + DESCRIPTION 	+ "]";
+	}
+
+	@Override
+	public int compareTo(ADEEvent o) {
+		// TODO Auto-generated method stub
+		return this.getDTSTART().compareTo(o.getDTSTART());
 	} 
 	
 	

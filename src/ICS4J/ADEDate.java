@@ -1,6 +1,6 @@
 package ICS4J;
 
-public class ADEDate {
+public class ADEDate implements Comparable<ADEDate>{
 	// Date
 	public int day; 
 	public int month; 
@@ -69,11 +69,32 @@ public class ADEDate {
 		
 		
 		return "ADEDate [" + dd + "/" + mo + "/" + yy + " " + hh + ":" + mn + "]";
-	} 
-	
-	
-	
-	
-	
+	}
+
+	@Override
+	public int compareTo(ADEDate o) {
+		int diff = this.getYear() - o.getYear(); 
+		
+		if(diff != 0)
+			return diff; 
+		
+		diff = this.getMonth() - o.getMonth(); 
+		if(diff != 0)
+			return diff; 
+		
+		diff = this.getDay() - o.getDay(); 
+		if(diff != 0)
+			return diff;
+		
+		diff = this.getHour() - o.getHour(); 
+		if(diff != 0)
+			return diff;
+		
+		diff = this.getMinute() - o.getMinute(); 
+		if(diff != 0)
+			return diff;
+		
+		return 0;
+	}
 
 }

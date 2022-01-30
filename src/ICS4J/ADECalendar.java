@@ -1,4 +1,8 @@
 package ICS4J;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -6,12 +10,12 @@ import java.util.Vector;
  *
  */
 public class ADECalendar {
-	private Vector<ADEEvent> Events;
+	private List<ADEEvent> Events;
 
 	
 	public ADECalendar() {
 		super();
-		this.Events = new Vector<ADEEvent>();  
+		this.Events = new ArrayList<ADEEvent>();  
 	}
 	
 	/**
@@ -38,15 +42,28 @@ public class ADECalendar {
 		if(index < this.Events.size())
 			return this.Events.get(index); 
 		else 
-			return this.Events.lastElement();
+			return null;
 	}
 	
 	/**
 	 * @return Events
 	 */
-	public Vector<ADEEvent> getAllEvent(){
+	public List<ADEEvent> getAllEvent(){
 		return this.Events; 
 	}
+	
+	public void sort() {
+		Collections.sort(Events, new Comparator<ADEEvent>() {
+			@Override
+			public int compare(ADEEvent o1, ADEEvent o2) {
+				// TODO Auto-generated method stub
+				return o1.compareTo(o2);
+			}
+			
+		}); 
+	}
+	
+	
 	
 	public void printAllEvent(){
 		for(ADEEvent event : this.Events) {

@@ -100,6 +100,7 @@ public class ICSparser {
         }catch (IOException e){
         	System.out.println("PB lecture du fichier");
         }
+		
 		return cal;
 	}
 }

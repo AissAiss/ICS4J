@@ -9,9 +9,11 @@ public class Main {
 		File file = new File("ADECal.ics"); 
 		ADECalendar cal = ICSparser.getADECalendar(file);
 		cal.printAllEvent();
+		cal.sort();
 		
-		//Premier commit avec Eclipse
-
+		System.out.println("---------------------"); 
+		
+		cal.printAllEvent();
 	}
 
 }
